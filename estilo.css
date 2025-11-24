@@ -6,7 +6,8 @@ body {
 
 #game {
   position: relative;
-  width: 400px;
+  width: 90%;       /* adaptable a móvil */
+  max-width: 400px; /* límite en pantallas grandes */
   height: 600px;
   margin: 20px auto;
   background-image: url('./imagenes/Paisaje.png'); /* 🌄 tu imagen personalizada */
@@ -19,10 +20,10 @@ body {
 #valde {
   position: absolute;
   bottom: 10px;
-  left: 160px; 
-  width: 120px;   
-  height: 120px;  
-  background-image: url('./imagenes/Valde.png');
+  left: 160px; /* ajusta para centrar */
+  width: 120px;   /* balde más grande */
+  height: 120px;
+  background-image: url('./imagenes/Valde.png'); /* 🪣 tu imagen de balde */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
