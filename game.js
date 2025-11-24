@@ -60,10 +60,12 @@ function crearGota() {
 
     if (top > 570) {
       const valdeLeft = valde.offsetLeft;
+      const valdeRight = valdeLeft + valde.offsetWidth;
       const gotaLeft = gota.offsetLeft;
+      const gotaRight = gotaLeft + gota.offsetWidth;
 
-      if (Math.abs(valdeLeft - gotaLeft) < valde.offsetWidth) {
-        // ✅ Atrapar gota
+      if (gotaRight > valdeLeft && gotaLeft < valdeRight) {
+        // ✅ La gota toca el balde
         if (gota.dataset.tipo === 'mala') {
           puntos -= 2; // penaliza solo si la atrapas
         } else {
