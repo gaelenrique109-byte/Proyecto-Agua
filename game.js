@@ -12,18 +12,29 @@ let intervaloGotas;
 let gotasActivas = [];
 let juegoActivo = false;
 
-// 🖱️ Movimiento con el mouse 
+// 🖱️ Movimiento con el mouse
 game.addEventListener('mousemove', (e) => {
   if (!juegoActivo) return;
-
   const gameRect = game.getBoundingClientRect();
   const mouseX = e.clientX - gameRect.left;
-  const valdeWidth = valde.offsetWidth;
-  let nuevaPos = mouseX - valdeWidth / 2;
+  moverValde(mouseX);
+});
 
+// 📱 Movimiento con el dedo (touch en móvil)
+game.addEventListener('touchmove', (e) => {
+  if (!juegoActivo) return;
+  const gameRect = game.getBoundingClientRect();
+  const touchX = e.touches[0].clientX - gameRect.left;
+  moverValde(touchX);
+});
+
+// 🔧 Función para mover el balde
+function moverValde(posX) {
+  const valdeWidth = valde.offsetWidth;
+  let nuevaPos = posX - valdeWidth / 2;
   nuevaPos = Math.max(0, Math.min(nuevaPos, game.offsetWidth - valdeWidth));
   valde.style.left = nuevaPos + 'px';
-});
+}
 
 // 💧 Crear gotas (buenas y malas)
 function crearGota() {
@@ -39,7 +50,7 @@ function crearGota() {
   }
 
   gota.classList.add('gota');
-  gota.style.left = Math.floor(Math.random() * 370) + 'px';
+  gota.style.left = Math.floor(Math.random() * (game.offsetWidth - 30)) + 'px';
   game.appendChild(gota);
 
   let top = 0;
@@ -97,7 +108,7 @@ function detenerGotas() {
 
 // 🪣 Volver Valde al centro
 function resetValde() {
-  valde.style.left = '160px'; // ajusta según el tamaño del balde
+  valde.style.left = (game.offsetWidth / 2 - valde.offsetWidth / 2) + 'px';
 }
 
 // ▶️ Iniciar juego
