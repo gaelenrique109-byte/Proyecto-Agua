@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego Valde atrapa gotas</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="website icon" type="png" href="./imagenes/Logo minimalista de .png">
+</head>
+<body>
+  <div id="game">
+    <div id="valde"></div>
+    <div id="score">Puntos: 0 | Fallos: 0/3</div>
+  </div>
+  <button id="startBtn">Iniciar Juego</button>
+
+  <!-- Modal de fin de juego -->
+  <div id="gameOverModal" class="modal">
+    <div class="ventana-reintentar">
+      <p>💧 ¡Juego terminado!</p> <!-- Este texto se actualizará dinámicamente -->
+      <button id="retryBtn">Reintentar</button>
+      <button id="closeBtn">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
