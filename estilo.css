@@ -4,13 +4,88 @@ body {
   font-family: sans-serif;
 }
 
+/* Título principal con logo */
+#tituloPrincipal {
+  display: flex;              /* activa flexbox */
+  justify-content: center;    /* centra horizontalmente */
+  align-items: center;        /* alinea verticalmente */
+  gap: 10px;                  /* espacio entre logo y texto */
+  margin: 20px auto 10px;
+}
+
+#logoTitulo {
+  width: 50px;   /* tamaño del logo */
+  height: 50px;
+}
+
+#tituloPrincipal h1 {
+  font-size: 28px;
+  color: #0044cc;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Marcador arriba */
+#score {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 8px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+/* Ventana de instrucciones (oculta al inicio) */
+#instrucciones {
+  display: none; /* oculto al inicio */
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#instrucciones h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #0044cc;
+}
+
+#instrucciones p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#cerrarInstrucciones {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#cerrarInstrucciones:hover {
+  background: #a71d2a;
+}
+
+/* Área de juego */
 #game {
   position: relative;
-  width: 90%;       /* adaptable a móvil */
-  max-width: 400px; /* límite en pantallas grandes */
+  width: 90%;
+  max-width: 400px;
   height: 600px;
   margin: 20px auto;
-  background-image: url('./imagenes/Paisaje.png'); /* 🌄 tu imagen personalizada */
+  background-image: url('./imagenes/Paisaje.png');
   background-size: cover;
   background-position: center;
   border: 2px solid #333;
@@ -20,10 +95,10 @@ body {
 #valde {
   position: absolute;
   bottom: 10px;
-  left: 160px; /* ajusta para centrar */
-  width: 120px;   /* balde más grande */
+  left: 160px;
+  width: 120px;
   height: 120px;
-  background-image: url('./imagenes/Valde.png'); /* 🪣 tu imagen de balde */
+  background-image: url('./imagenes/Valde.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -38,37 +113,44 @@ body {
   pointer-events: none;
 }
 
-/* Diferenciar gotas malas con filtro */
 .gota[data-tipo="mala"] {
   filter: hue-rotate(180deg) brightness(0.8);
 }
 
-/* Marcador */
-#score {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-weight: bold;
+/* Botones de control */
+.botones-control {
+  text-align: center;
+  margin: 20px;
 }
 
-/* Botón de inicio */
-#startBtn {
-  display: block;
-  margin: 20px auto;
+#startBtn, #abrirInstrucciones {
+  margin: 0 10px;
   padding: 10px 20px;
   font-size: 18px;
-  background: #0044cc;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#startBtn {
+  background: #0044cc;
+  color: white;
 }
 
 #startBtn:hover {
   background: #003399;
 }
 
-/* Modal centrado */
+#abrirInstrucciones {
+  background: #28a745;
+  color: white;
+}
+
+#abrirInstrucciones:hover {
+  background: #1e7e34;
+}
+
+/* Modal */
 .modal {
   display: none;
   position: fixed;
