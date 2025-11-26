@@ -2,21 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>💧Protector del agua💧</title>
+  <title>💧Water guarden💧</title>
   <link rel="stylesheet" href="estilo.css">
   <link rel="website icon" type="png" href="./imagenes/Logo minimalista de .png">
 </head>
 <body>
+  <!-- Título principal -->
+<header id="tituloPrincipal">
+  <img src="./imagenes/Logo minimalista de .png" alt="Logo Protector del agua" id="logoTitulo">
+  <h1>💧 Water guarden 💧</h1>
+</header>
+
+  <!-- Marcador arriba -->
+  <div id="score">Puntos: 0 | Fallos: 0/3</div>
+
+  <!-- Ventana de instrucciones (oculta al inicio) -->
+  <div id="instrucciones">
+    <h2>📖 Instrucciones del juego</h2>
+    <p>
+      Mueve el balde con el mouse o con el dedo en tu móvil.<br>
+      Atrapa las gotas buenas 💧 para sumar puntos.<br>
+      Evita las gotas malas ❌, si las atrapas te restan puntos.<br>
+      Si dejas pasar 3 gotas buenas, el juego termina.
+    </p>
+    <button id="cerrarInstrucciones">Cerrar instrucciones</button>
+  </div>
+
+  <!-- Área de juego -->
   <div id="game">
     <div id="valde"></div>
-    <div id="score">Puntos: 0 | Fallos: 0/3</div>
   </div>
-  <button id="startBtn">Iniciar Juego</button>
+
+  <!-- Botones de control -->
+  <div class="botones-control">
+    <button id="startBtn">Iniciar Juego</button>
+    <button id="abrirInstrucciones">Abrir instrucciones</button>
+  </div>
 
   <!-- Modal de fin de juego -->
   <div id="gameOverModal" class="modal">
     <div class="ventana-reintentar">
-      <p>💧 ¡Juego terminado!</p> <!-- Este texto se actualizará dinámicamente -->
+      <p>💧 ¡Juego terminado!</p>
       <button id="retryBtn">Reintentar</button>
       <button id="closeBtn">Cerrar</button>
     </div>
@@ -25,4 +51,3 @@
   <script src="game.js"></script>
 </body>
 </html>
-
