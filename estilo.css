@@ -1,197 +1,199 @@
 body {
-  margin: 0;
-  background: #aef;
-  font-family: sans-serif;
+  margin: 0;                 /* Elimina márgenes por defecto del navegador */
+  background: #aef;          /* Color de fondo celeste */
+  font-family: sans-serif;   /* Fuente general sin remates */
 }
-
 /* Título principal con logo */
 #tituloPrincipal {
-  display: flex;              /* activa flexbox */
-  justify-content: center;    /* centra horizontalmente */
-  align-items: center;        /* alinea verticalmente */
-  gap: 10px;                  /* espacio entre logo y texto */
-  margin: 20px auto 10px;
+  display: flex;              /* Activa flexbox para organizar elementos en fila */
+  justify-content: center;    /* Centra horizontalmente logo y texto */
+  align-items: center;        /* Centra verticalmente logo y texto */
+  gap: 10px;                  /* Espacio entre logo y título */
+  margin: 20px auto 10px;     /* Margen superior e inferior */
 }
 
 #logoTitulo {
-  width: 50px;   /* tamaño del logo */
-  height: 50px;
+  width: 50px;   /* Ancho del logo */
+  height: 50px;  /* Alto del logo */
 }
 
 #tituloPrincipal h1 {
-  font-size: 28px;
-  color: #0044cc;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  font-size: 28px;                          /* Tamaño del título */
+  color: #0044cc;                           /* Color azul */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra para dar relieve */
 }
 
 /* Marcador arriba */
 #score {
-  width: 90%;
-  max-width: 400px;
-  margin: 10px auto;
-  padding: 8px;
-  background: #fff;
-  border: 2px solid #333;
-  border-radius: 6px;
-  text-align: center;
-  font-weight: bold;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  width: 90%;                  /* Ocupa 90% del ancho disponible */
+  max-width: 400px;            /* Máximo ancho fijo */
+  margin: 10px auto;           /* Centrado horizontal */
+  padding: 8px;                /* Espaciado interno */
+  background: #fff;            /* Fondo blanco */
+  border: 2px solid #333;      /* Borde gris oscuro */
+  border-radius: 6px;          /* Bordes redondeados */
+  text-align: center;          /* Texto centrado */
+  font-weight: bold;           /* Texto en negrita */
+  box-shadow: 0 0 6px rgba(0,0,0,0.2); /* Sombra ligera */
 }
 
-/* Ventana de instrucciones (oculta al inicio) */
+/*Ventana de instrucciones (oculta al inicio) */
 #instrucciones {
-  display: none; /* oculto al inicio */
-  width: 90%;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 15px;
-  background: #fff;
-  border: 2px solid #333;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: none;               /* Oculta al inicio */
+  width: 90%;                  /* Ocupa casi todo el ancho */
+  max-width: 400px;            /* Máximo ancho */
+  margin: 20px auto;           /* Centrado con margen */
+  padding: 15px;               /* Espaciado interno */
+  background: #fff;            /* Fondo blanco */
+  border: 2px solid #333;      /* Borde gris oscuro */
+  border-radius: 8px;          /* Bordes redondeados */
+  text-align: center;          /* Texto centrado */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Sombra más marcada */
 }
 
 #instrucciones h2 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  color: #0044cc;
+  margin: 0 0 10px;   /* Margen inferior */
+  font-size: 20px;    /* Tamaño del subtítulo */
+  color: #0044cc;     /* Color del boton de instrciones */
 }
 
 #instrucciones p {
-  margin: 0 0 10px;
-  font-size: 14px;
-  line-height: 1.5;
+  margin: 0 0 10px;   /* Margen inferior */
+  font-size: 14px;    /* Tamaño de texto */
+  line-height: 1.5;   /* Espaciado entre líneas */
 }
 
 #cerrarInstrucciones {
-  background: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 14px;
+  background: #dc3545; /* Fondo rojo */
+  color: white;/* Texto blanco */
+  border: none;/* Sin borde */
+  border-radius: 5px;/* Bordes redondeados */
+  padding: 6px 12px;/* Espaciado interno */
+  cursor: pointer;/* Cursor tipo mano */
+  font-size: 14px;/* Tamaño de texto */
 }
 
 #cerrarInstrucciones:hover {
-  background: #a71d2a;
+  background: #a71d2a; /* cada que el mouse pase encima cambia de color a un Rojo un poco mas fuerte */
 }
 
-/* Área de juego */
+/* 🔹 Área de juego */
 #game {
-  position: relative;
-  width: 90%;
-  max-width: 400px;
-  height: 600px;
-  margin: 20px auto;
-  background-image: url('./imagenes/Paisaje.png');
-  background-size: cover;
-  background-position: center;
-  border: 2px solid #333;
-  overflow: hidden;
+  position: relative;                        /* Posiciona elementos hijos de forma absoluta */
+  width: 90%;                                /* Ocupa casi todo el ancho */
+  max-width: 400px;                          /* Máximo ancho */
+  height: 600px;                             /* Altura fija */
+  margin: 20px auto;                         /* Centrado */
+  background-image: url('./imagenes/Paisaje.png'); /* Fondo con imagen */
+  background-size: cover;                    /* Imagen ajustada al área */
+  background-position: center;               /* Centrada */
+  border: 2px solid #333;                    /* Borde gris oscuro */
+  overflow: hidden;                          /* Oculta elementos que se salgan */
 }
 
 #valde {
-  position: absolute;
-  bottom: 10px;
-  left: 160px;
-  width: 120px;
-  height: 120px;
-  background-image: url('./imagenes/Valde.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: left 0.3s ease;
+  position: absolute;/* Posiciona dentro del área */
+  bottom: 10px;/* Pegado al fondo */
+  left: 160px;/* Posición inicial horizontal */
+  width: 120px;/* Ancho del balde */
+  height: 120px;/* Alto del balde */
+  background-image: url('./imagenes/Valde.png'); /* Imagen del balde */
+  background-size: contain;/* Ajusta la imagen sin recortar */
+  background-repeat: no-repeat;/* No se repite */
+  background-position: center;/* Centrada */
+  transition: left 0.3s ease;/* Movimiento suave al cambiar posición */
 }
 
 .gota {
-  position: absolute;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  pointer-events: none;
+  position: absolute; /* Cada gota se posiciona dentro del área */
+  top: 0;             /* Empieza arriba */
+  width: 30px;        /* Ancho de la gota */
+  height: 30px;       /* Alto de la gota */
+  pointer-events: none; /* No bloquea interacción con el mouse */
 }
 
 .gota[data-tipo="mala"] {
-  filter: hue-rotate(180deg) brightness(0.8);
+  filter: hue-rotate(90deg) brightness(0.8); /* Cambia color para diferenciar gotas malas */
+  filter: none;
 }
 
 /* Botones de control */
 .botones-control {
-  text-align: center;
-  margin: 20px;
+  display: flex;              /* Flexbox para organizar botones */
+  justify-content: center;    /* Centra horizontalmente */
+  gap: 20px;                  /* Espacio entre botones */
+  margin: 20px auto;          /* Centrado */
 }
 
 #startBtn, #abrirInstrucciones {
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  display: inline-block;      /* Botones en línea */
+  padding: 10px 20px;         /* Espaciado interno */
+  font-size: 18px;            /* Tamaño de texto */
+  border: none;               /* Sin borde */
+  border-radius: 5px;         /* Bordes redondeados */
+  cursor: pointer;            /* Cursor tipo mano */
 }
 
 #startBtn {
-  background: #0044cc;
-  color: white;
+  background: #0044cc; /* el color del boton de iniciar partida */
+  color: white;        /* Texto blanco */
 }
 
 #startBtn:hover {
-  background: #003399;
+  background: #003399; /* cada que el mouse pase encima cambia de color a un azul un poco mas fuerte */
 }
 
 #abrirInstrucciones {
-  background: #28a745;
-  color: white;
+  background: #28a745; /* el color del boton de instrcciones */
+  color: white;        /* Texto blanco */
 }
 
 #abrirInstrucciones:hover {
-  background: #1e7e34;
+  background: #1e7e34; /* cada que el mouse pase encima cambia de color a un verde un poco mas fuerte */
 }
 
-/* Modal */
+/*Modal (ventana emergente de fin de juego) */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
+  display: none;/* Oculto al inicio */
+  position: fixed;/* Se fija en toda la pantalla */
+  top: 0; left: 0;/* Ocupa desde la esquina superior izquierda */
+  width: 100%; height: 100%;/* Cubre toda la pantalla y asi se centra */
+  background: rgba(0,0,0,0.5);/* Fondo semitransparente oscuro en la ventana de derrota en el juego */
+  justify-content: center;/* Centra contenido horizontalmente */
+  align-items: center;/* Centra contenido verticalmente */
 }
 
 .ventana-reintentar {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  width: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background: #fff; /* La ventana de reinciar que su fondo sea blanco */
+  padding: 20px;/* Espaciado interno */
+  border-radius: 8px;/* Bordes redondeados */
+  text-align: center;/* Texto centrado */
+  width: 250px;/* Ancho fijo */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Sombra */
 }
 
 .ventana-reintentar button {
-  margin: 10px;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  margin: 10px;/* Espacio alrededor */
+  padding: 8px 15px;/* Espaciado interno */
+  border: none;/* Sin borde */
+  border-radius: 5px;/* Bordes redondeados */
+  cursor: pointer;/* Cursor tipo mano */
 }
 
 #retryBtn {
-  background: #007bff;
-  color: white;
+  background: #007bff; /* para que el boton tenga color Azul */
+  color: white;        /* Texto blanco */
 }
 
 #retryBtn:hover {
-  background: #0056b3;
+  background: #0056b3; /* cada que el mouse pase encima cambia de color a un azul un poco mas fuerte*/
 }
 
 #closeBtn {
-  background: #dc3545;
-  color: white;
+  background: #dc3545; /* para que el boton tenga color Rojo */
+  color: white;        /* Texto blanco */
 }
 
 #closeBtn:hover {
-  background: #a71d2a;
+  background: #a71d2a; /* cada que el mouse pase encima cambia de color a un rojo un poco mas fuerte*/
 }
