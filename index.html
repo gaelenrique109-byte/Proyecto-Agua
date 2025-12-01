@@ -1,53 +1,54 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>💧Water guarden💧</title>
-  <link rel="stylesheet" href="estilo.css">
-  <link rel="website icon" type="png" href="./imagenes/Logo minimalista de .png">
+  <meta charset="UTF-8"> 
+  <title>💧Water guarden💧</title> <!-- Título --->
+  <link rel="stylesheet" href="estilo.css"> <!-- Conecta el archivo CSS para dar estilo a la pagina -->
+  <link rel="website icon" type="png" href="./imagenes/Logo minimalista de .png"> <!-- Icono de la página (favicon) -->
 </head>
 <body>
-  <!-- Título principal -->
-<header id="tituloPrincipal">
-  <img src="./imagenes/Logo minimalista de .png" alt="Logo Protector del agua" id="logoTitulo">
-  <h1>💧 Water guarden 💧</h1>
-</header>
+  <!-- Encabezado principal con logo y título -->
+  <header id="tituloPrincipal">
+    <img src="./imagenes/Logo minimalista de .png" alt="Logo Protector del agua" id="logoTitulo"> 
+    <h1>💧 Water guarden 💧</h1>
+  </header>
 
-  <!-- Marcador arriba -->
+  <!-- Marcador de puntos y fallos -->
   <div id="score">Puntos: 0 | Fallos: 0/3</div>
 
-  <!-- Ventana de instrucciones (oculta al inicio) -->
+  <!-- Ventana de instrucciones-->
   <div id="instrucciones">
     <h2>📖 Instrucciones del juego</h2>
     <p>
-      Mueve el balde con el mouse o con el dedo en tu móvil.<br>
-      Atrapa las gotas buenas 💧 para sumar puntos.<br>
-      Evita las gotas malas ❌, si las atrapas te restan puntos.<br>
-      Si dejas pasar 3 gotas buenas, el juego termina.
+    🪣 Mueve el balde con el mouse o con el dedo en tu móvil.<br>
+    ✅ Atrapa las gotas limpias para sumar puntos.<br>
+    🚱 Evita los objetos que representan desperdicio, como llaves abiertas o basura.<br>
+    ❌ Si dejas pasar 3 gotas limpias sin atraparlas, el juego termina.<br><br>
+
     </p>
-    <button id="cerrarInstrucciones">Cerrar instrucciones</button>
+    <button id="cerrarInstrucciones">Cerrar instrucciones</button> <!-- Botón para cerrar la ventana de instrucciones -->
   </div>
 
-  <!-- Área de juego -->
+  <!-- Área de juego donde caen las gotas -->
   <div id="game">
-    <div id="valde"></div>
+    <div id="valde"></div> <!-- Balde que se mueve para atrapar gotas -->
   </div>
 
   <!-- Botones de control -->
   <div class="botones-control">
-    <button id="startBtn">Iniciar Juego</button>
-    <button id="abrirInstrucciones">Abrir instrucciones</button>
+    <button id="startBtn">Iniciar Juego</button> <!-- Botón para iniciar partida -->
+    <button id="abrirInstrucciones">Abrir instrucciones</button> <!-- Botón para mostrar reglas -->
   </div>
 
   <!-- Modal de fin de juego -->
   <div id="gameOverModal" class="modal">
     <div class="ventana-reintentar">
-      <p>💧 ¡Juego terminado!</p>
-      <button id="retryBtn">Reintentar</button>
-      <button id="closeBtn">Cerrar</button>
+      <p>💧 ¡Juego terminado!</p> <!-- Mensaje de fin de partida -->
+      <button id="retryBtn">Reintentar</button> <!-- Botón para reiniciar el juego -->
+      <button id="closeBtn">Cerrar</button> <!-- Botón para cerrar el modal -->
     </div>
   </div>
 
-  <script src="game.js"></script>
+  <script src="game.js"></script> <!---Conecta el archivo JavaScript con la lógica del juego -->
 </body>
-</html>
+</html> 
