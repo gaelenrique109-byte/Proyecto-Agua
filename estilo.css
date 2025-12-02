@@ -1,16 +1,17 @@
+/* Reglas globales de la página */
 body {
-  margin: 0;                 /* Elimina márgenes por defecto del navegador */
+  margin: 0;                 /* Quita el margen por defecto del navegador */
   background: #aef;          /* Color de fondo celeste */
-  font-family: sans-serif;   /* Fuente general sin remates */
+  font-family: sans-serif;   /* Tipografía sin remates para un estilo limpio */
 }
 
-/* Título principal con logo */
+/* Encabezado principal con logo y título */
 #tituloPrincipal {
-  display: flex;              /* Activa flexbox para organizar elementos en fila */
-  justify-content: center;    /* Centra horizontalmente logo y texto */
-  align-items: center;        /* Centra verticalmente logo y texto */
-  gap: 10px;                  /* Espacio entre logo y título */
-  margin: 20px auto 10px;     /* Margen superior e inferior */
+  display: flex;              /* Usa flexbox para colocar logo y título en una fila */
+  justify-content: center;    /* Centra horizontalmente el contenido del encabezado */
+  align-items: center;        /* Centra verticalmente el contenido del encabezado */
+  gap: 10px;                  /* Espacio entre el logo y el título */
+  margin: 20px auto 10px;     /* Espacio superior e inferior, centrado horizontal */
 }
 
 #logoTitulo {
@@ -20,207 +21,230 @@ body {
 
 #tituloPrincipal h1 {
   font-size: 28px;                          /* Tamaño del título */
-  color: #0044cc;                           /* Color azul */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra para dar relieve */
+  color: #0044cc;                           /* Color azul del texto del título */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Sombra ligera para dar relieve */
 }
 
-/* Marcador arriba */
+/* Marcador de puntos y fallos */
 #score {
-  width: 90%;                  /* Ocupa 90% del ancho disponible */
-  max-width: 400px;            /* Máximo ancho fijo */
-  margin: 10px auto;           /* Centrado horizontal */
-  padding: 8px;                /* Espaciado interno */
-  background: #fff;            /* Fondo blanco */
-  border: 2px solid #333;      /* Borde gris oscuro */
-  border-radius: 6px;          /* Bordes redondeados */
+  width: 90%;                  /* Ocupa el 90% del ancho del contenedor */
+  max-width: 400px;            /* No supera los 400px para mantener legibilidad */
+  margin: 10px auto;           /* Centra horizontalmente con margen vertical */
+  padding: 8px;                /* Espaciado interno del marcador */
+  background: #fff;            /* Fondo blanco para contraste */
+  border: 2px solid #333;      /* Borde gris oscuro para delimitar el marcador */
+  border-radius: 6px;          /* Bordes suavizados */
   text-align: center;          /* Texto centrado */
-  font-weight: bold;           /* Texto en negrita */
+  font-weight: bold;           /* Texto en negrita para destacarlo */
   box-shadow: 0 0 6px rgba(0,0,0,0.2); /* Sombra ligera */
 }
 
-/*Ventana de instrucciones (oculta al inicio) */
+/* Ventana de instrucciones (oculta al inicio) */
 #instrucciones {
-  display: none;               
-  width: 90%;                  
-  max-width: 400px;            
-  margin: 20px auto;           
-  padding: 15px;               
-  background: #fff;            
-  border: 2px solid #333;      
-  border-radius: 8px;          
-  text-align: center;          
-  box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+  display: none;               /* No se muestra hasta que se active por JS */
+  width: 90%;                  /* Ocupa la mayor parte del ancho disponible */
+  max-width: 400px;            /* Limita el ancho máximo */
+  margin: 20px auto;           /* Centra la ventana con margen vertical */
+  padding: 15px;               /* Espaciado interno */
+  background: #fff;            /* Fondo blanco para legibilidad */
+  border: 2px solid #333;      /* Borde para delimitar la ventana */
+  border-radius: 8px;          /* Esquinas redondeadas */
+  text-align: center;          /* Centra el contenido del texto */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Sombra más marcada para resaltar */
 }
 
 #instrucciones h2 {
-  margin: 0 0 10px;   
-  font-size: 20px;    
-  color: #0044cc;     
+  margin: 0 0 10px;   /* Margen inferior para separar del contenido */
+  font-size: 20px;    /* Tamaño del subtítulo */
+  color: #0044cc;     /* Color azul para tematizar con el juego */
 }
 
 #instrucciones p {
-  margin: 0 0 10px;   
-  font-size: 14px;    
-  line-height: 1.5;   
+  margin: 0 0 10px;   /* Margen inferior entre párrafos */
+  font-size: 14px;    /* Tamaño de letra estándar para textos */
+  line-height: 1.5;   /* Interlineado para facilitar la lectura */
 }
 
 #cerrarInstrucciones {
-  background: #dc3545; 
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 14px;
+  background: #dc3545; /* Fondo rojo para el botón de cerrar */
+  color: white;        /* Texto en blanco para contraste */
+  border: none;        /* Sin borde adicional */
+  border-radius: 5px;  /* Esquinas redondeadas */
+  padding: 6px 12px;   /* Espaciado interno del botón */
+  cursor: pointer;     /* Muestra el cursor de mano al pasar por encima */
+  font-size: 14px;     /* Tamaño del texto del botón */
 }
 
 #cerrarInstrucciones:hover {
-  background: #a71d2a; 
+  background: #a71d2a; /* Color rojo más oscuro al pasar el mouse */
 }
 
-/* 🔹 Área de juego */
+/* Área de juego principal */
 #game {
-  position: relative;                        
-  width: 90%;                                
-  max-width: 400px;                          
-  height: 600px;                             
-  margin: 20px auto;                         
-  background-image: url('./imagenes/Paisaje.png'); 
-  background-size: cover;                    
-  background-position: center;               
-  border: 2px solid #333;                    
-  overflow: hidden;                          
+  position: relative;                        /* Permite posicionar hijos de manera absoluta */
+  width: 90%;                                /* Ocupa el 90% del ancho disponible */
+  max-width: 400px;                          /* Limita el ancho para mantener escala */
+  height: 600px;                             /* Altura fija del área de juego en escritorio */
+  margin: 20px auto;                         /* Centra el área de juego */
+  background-image: url('./imagenes/Paisaje.png'); /* Imagen de fondo del escenario */
+  background-size: cover;                    /* Ajusta la imagen para cubrir el área */
+  background-position: center;               /* Centra la imagen de fondo */
+  border: 2px solid #333;                    /* Borde para delimitar el área */
+  overflow: hidden;                          /* Oculta elementos que se salgan del área */
 }
 
-/* 🔧 NUEVO: Ajuste responsivo para móviles */
+/* Ajustes responsivos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
   #game {
-    height: 70vh;            /* Altura relativa a la pantalla */
-    max-width: 100%;         /* Ocupa todo el ancho en móviles */
+    height: 70vh;            /* Usa altura relativa al alto de la pantalla en móviles */
+    max-width: 100%;         /* Ocupa todo el ancho posible */
   }
 
   #valde {
-    width: 80px;             /* Balde más pequeño en móviles */
+    width: 80px;             /* Reduce tamaño del balde para móviles */
     height: 80px;
   }
 
   .gota {
-    width: 24px;             /* Gotas más pequeñas */
+    width: 24px;             /* Reduce tamaño de las gotas para móviles */
     height: 24px;
   }
 
   #tituloPrincipal h1 {
-    font-size: 22px;         /* Título más compacto */
+    font-size: 22px;         /* Ajusta el tamaño del título en móviles */
   }
 
   #score {
-    font-size: 14px;         /* Texto más pequeño */
+    font-size: 14px;         /* Ajusta tamaño del texto del marcador en móviles */
   }
 }
 
+/* Balde del jugador */
 #valde {
-  position: absolute;
-  bottom: 10px;
-  left: 160px;
-  width: 120px;
-  height: 120px;
-  background-image: url('./imagenes/Valde.png'); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: left 0.3s ease;
+  position: absolute;        /* Se posiciona relativo al contenedor #game */
+  bottom: 10px;              /* Se pega a 10px del borde inferior */
+  left: 160px;               /* Posición inicial horizontal del balde */
+  width: 120px;              /* Ancho del balde */
+  height: 120px;             /* Alto del balde */
+  background-image: url('./imagenes/Valde.png');  /* Imagen del balde */
+  background-size: contain;  /* Mantiene proporciones dentro del contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center;  /* Centra la imagen en el balde */
+  transition: left 0.3s ease;   /* Movimiento suave al cambiar la posición horizontal */
 }
 
+/* Estilo base de las gotas */
 .gota {
-  position: absolute; 
-  top: 0;             
-  width: 30px;        
-  height: 30px;       
-  pointer-events: none; 
+  position: absolute;  /* Cada gota se posiciona dentro del área de juego */
+  top: 0;              /* Inicia desde la parte superior del área */
+  width: 30px;         /* Ancho de la gota en escritorio */
+  height: 30px;        /* Alto de la gota en escritorio */
+  pointer-events: none; /* Permite que el cursor pase a través sin bloquear interacción */
 }
 
+/* Variación visual para gotas malas */
 .gota[data-tipo="mala"] {
-  filter: hue-rotate(90deg) brightness(0.8); 
-  filter: none;
+  filter: hue-rotate(90deg) brightness(0.8); /* Cambia el tono y brillo para diferenciar gotas malas */
+  /* Nota: Se eliminó un segundo "filter: none" que anulaba este estilo */
 }
 
-/* Botones de control */
+/* Contenedor de botones de control */
 .botones-control {
-  display: flex;              
-  justify-content: center;    
-  gap: 20px;                  
-  margin: 20px auto;          
+  display: flex;              /* Usa flexbox para ordenar los botones */
+  justify-content: center;    /* Centra los botones horizontalmente */
+  gap: 20px;                  /* Espacio entre los botones */
+  margin: 20px auto;          /* Centrado con margen vertical */
 }
 
+/* Estilo general de los botones principales */
 #startBtn, #abrirInstrucciones {
-  display: inline-block;      
-  padding: 10px 20px;         
-  font-size: 18px;            
-  border: none;               
-  border-radius: 5px;         
-  cursor: pointer;            
+  display: inline-block;      /* Coloca los botones en línea */
+  padding: 10px 20px;         /* Espaciado interno de los botones */
+  font-size: 18px;            /* Tamaño de texto de los botones */
+  border: none;               /* Sin borde por defecto */
+  border-radius: 5px;         /* Bordes redondeados para mejor estética */
+  cursor: pointer;            /* Cursor de mano al pasar por encima */
 }
 
+/* Botón de iniciar juego */
 #startBtn {
-  background: #0044cc; 
-  color: white;        
+  background: #0044cc; /* Color de fondo azul del botón */
+  color: white;        /* Texto en blanco para contraste */
 }
 
 #startBtn:hover {
-  background: #003399; 
+  background: #003399; /* Azul más oscuro al pasar el mouse */
 }
 
+/* Botón de abrir instrucciones */
 #abrirInstrucciones {
-  background: #28a745; 
-  color: white;        
+  background: #28a745; /* Color de fondo verde del botón */
+  color: white;        /* Texto en blanco para contraste */
 }
 
 #abrirInstrucciones:hover {
-  background: #1e7e34; 
+  background: #1e7e34; /* Verde más oscuro al pasar el mouse */
 }
 
-/*Modal (ventana emergente de fin de juego) */
+/* Modal (ventana emergente de fin de juego) */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  justify-content: center;
-  align-items: center;
+  display: none;       /* Oculta el modal por defecto */
+  position: fixed;     /* Ocupa toda la pantalla fijándose a la ventana */
+  top: 0; left: 0;     /* Se posiciona en la esquina superior izquierda */
+  width: 100%; height: 100%; /* Cubre toda el área visible */
+  background: rgba(0,0,0,0.5); /* Fondo oscuro semitransparente */
+  justify-content: center;    /* Centra el contenido en horizontal */
+  align-items: center;        /* Centra el contenido en vertical */
 }
 
+/* Contenido de la ventana de reintentar dentro del modal */
 .ventana-reintentar {
-  background: #fff; 
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  width: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background: #fff;    /* Fondo blanco para el contenido del modal */
+  padding: 20px;       /* Espaciado interno */
+  border-radius: 8px;  /* Bordes redondeados del contenedor */
+  text-align: center;  /* Texto centrado dentro del modal */
+  width: 250px;        /* Ancho fijo del contenedor */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Sombra para dar profundidad */
 }
 
+/* Botones dentro del modal de fin de juego */
 .ventana-reintentar button {
-  margin: 10px;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  margin: 10px;        /* Espacio alrededor de los botones */
+  padding: 8px 15px;   /* Espaciado interno de los botones */
+  border: none;        /* Sin bordes por defecto */
+  border-radius: 5px;  /* Esquinas redondeadas */
+  cursor: pointer;     /* Cursor de mano al pasar sobre el botón */
 }
 
+/* Botón de reintentar */
 #retryBtn {
-  background: #007bff; 
-  color: white;        
+  background: #007bff; /* Color azul del botón de reintentar */
+  color: white;        /* Texto en blanco para contraste */
 }
 
 #retryBtn:hover {
-  background: #0056b3; 
+  background: #0056b3; /* Azul más oscuro al pasar el mouse encima */
 }
 
+/* Botón de cerrar */
 #closeBtn {
-  background: #dc3545; 
-  color: white;        
+  background: #dc3545; /* Color rojo del botón de cerrar */
+  color: white;        /* Texto en blanco para contraste */
 }
 
 #closeBtn:hover {
-  background: #a71d2a; 
+  background: #a71d2a; /* Rojo más oscuro al pasar el mouse encima */
+}
+
+/* Firma pequeña al pie de la página */
+#firma {
+  text-align: center;      /* Centra el texto horizontalmente */
+  font-size: 12px;         /* Tamaño de texto pequeño para discreción */
+  color: #333;             /* Color gris oscuro para un tono neutro */
+  margin: 10px 0;          /* Espacio arriba y abajo para separación */
+  opacity: 0.7;            /* Ligera transparencia para que no distraiga */
+}
+
+#firma p {
+  margin: 0;               /* Elimina márgenes por defecto del párrafo */
 }
