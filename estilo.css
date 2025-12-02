@@ -1,4 +1,3 @@
-/* Reglas globales de la página */
 body {
   margin: 0;                 /* Quita el margen por defecto del navegador */
   background: #aef;          /* Color de fondo celeste */
@@ -145,7 +144,7 @@ body {
 /* Variación visual para gotas malas */
 .gota[data-tipo="mala"] {
   filter: hue-rotate(90deg) brightness(0.8); /* Cambia el tono y brillo para diferenciar gotas malas */
-  /* Nota: Se eliminó un segundo "filter: none" que anulaba este estilo */
+  filter: none;
 }
 
 /* Contenedor de botones de control */
