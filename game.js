@@ -34,6 +34,24 @@ game.addEventListener('mousemove', (e) => {
   //Calcula las posiciones 
   moverValde(mouseX);
 });
+// 🔀 Mueve el balde con las flechas del teclado
+window.addEventListener('keydown', (e) => {
+  if (!juegoActivo) return; // Solo funciona si el juego está activo
+
+  const valdeRect = valde.getBoundingClientRect();
+  const gameRect = game.getBoundingClientRect();
+  let nuevaPos = parseInt(valde.style.left) || 0;
+
+  const paso = 20; // Cantidad de píxeles que se mueve cada vez
+
+  if (e.key === 'ArrowLeft') {
+    nuevaPos = Math.max(0, nuevaPos - paso);
+  } else if (e.key === 'ArrowRight') {
+    nuevaPos = Math.min(game.offsetWidth - valde.offsetWidth, nuevaPos + paso);
+  }
+
+  valde.style.left = nuevaPos + 'px';
+});
 
 // Mueve el balde con el dedo (pantalla táctil)
 game.addEventListener('touchmove', (e) => {
@@ -75,8 +93,12 @@ function crearGota() {
 
   // Posición inicial aleatoria
   gota.classList.add('gota');
-  gota.style.left = Math.floor(Math.random() * (game.offsetWidth - 30)) + 'px';
+  const margen = 50; // margen para que no aparezcan en las esquinas
+  const rango = game.offsetWidth - margen * 2;
+  const posicionX = Math.floor(Math.random() * rango) + margen;
+  gota.style.left = posicionX + 'px';
   game.appendChild(gota);
+
 
   // Movimiento hacia abajo
   let top = 0;
@@ -182,6 +204,11 @@ closeBtn.addEventListener('click', () => {
   resetValde();                                 // Centra el balde de nuevo en el área de juego
   juegoActivo = false;                          // Marca que el juego ya no está en marcha
   startBtn.style.display = 'block';             // Vuelve a mostrar el botón azul de "Iniciar Juego"
+   // 🔧 Reinicia puntos y fallos al cerrar el modal
+  puntos = 0;
+  fallos = 0;
+  scoreDisplay.textContent = `Puntos: ${puntos} | Fallos: ${fallos}/3`;
+
 });
 
 // Botón para cerrar instrucciones
